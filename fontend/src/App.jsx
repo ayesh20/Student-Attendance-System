@@ -5,7 +5,6 @@ import { Toaster } from "react-hot-toast";
 
 
 // Pages
-import Login from "./pages/Login/Login.jsx";
 import Dashboard from "./pages/Dashboard/dashboard.jsx";
 
 
@@ -31,8 +30,7 @@ function App() {
       
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Login />} />
-            <Route path="/dashboard" element={<Dashboard/>}/>
+            <Route path="/" element={<Dashboard/>}/>
             
             
 

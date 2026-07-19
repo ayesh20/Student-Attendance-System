@@ -118,7 +118,7 @@ export default function Dashboard() {
             </div>
 
             {/* Hero Banner */}
-            <div className="bg-gradient-to-r from-blue-800 to-blue-900 rounded-2xl p-8 md:p-12 mb-8 relative overflow-hidden shadow-xl">
+            <div className="bg-gradient-to-r from-blue-800 to-gray-900 rounded-2xl p-8 md:p-12 mb-8 relative overflow-hidden shadow-xl">
                 <h2 className="text-4xl md:text-5xl font-bold text-white mb-2">{greeting}</h2>
                 <p className="text-blue-100 text-lg">
                     Latest processed sheet: {dashboardData.latestSheetDate || 'No sheets uploaded yet'}
@@ -158,23 +158,7 @@ export default function Dashboard() {
                 </div>
             </div>
 
-            {/* Weekly Average Attendance Chart */}
-            <div className="mb-8 bg-white rounded-2xl p-6 shadow-lg">
-                <h2 className="text-2xl font-bold text-slate-800 mb-4">Weekly Average Attendance</h2>
-                {dashboardData.weeklyAverage.length === 0 ? (
-                    <p className="text-slate-500">No attendance data yet — upload a signing sheet to get started.</p>
-                ) : (
-                    <ResponsiveContainer width="100%" height={300}>
-                        <BarChart data={dashboardData.weeklyAverage}>
-                            <CartesianGrid strokeDasharray="3 3" />
-                            <XAxis dataKey="week" />
-                            <YAxis domain={[0, 100]} unit="%" />
-                            <Tooltip formatter={(value) => [`${value}%`, 'Avg Attendance']} />
-                            <Bar dataKey="averageAttendance" fill="#2563eb" radius={[6, 6, 0, 0]} />
-                        </BarChart>
-                    </ResponsiveContainer>
-                )}
-            </div>
+            
 
             {/* Quick Actions */}
             <div>
